@@ -1,4 +1,11 @@
 html {
     font-size: 125%;
     font-family: $font;
+    background: linear-gradient(90deg, rgba(120,193,204,1) 50%, rgba(219,90,187,1) 50%);
 }
+.wrapper {
+    max-width: 1260px;
+    width: 80%;
+    margin: 0 auto;
+}
+
