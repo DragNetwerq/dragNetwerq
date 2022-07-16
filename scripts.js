@@ -6,7 +6,8 @@ queenApp.init = () => {
     queenApp.getQuotes();
 }
 
-queenApp.url = 'http://www.nokeynoshade.party/api/queens?limit=12'
+queenApp.url = 'http://www.nokeynoshade.party/api/queens?limit=8'
+
 
 // method to call the api
 queenApp.getQuotes = () => {
@@ -22,25 +23,58 @@ queenApp.getQuotes = () => {
             queenApp.displayQuotes(jsonData);
         })
 };
-//Method to display data on the page and pass it in a parameter so that the method knows it'll have to actually accept an argument when it's called:
-queenApp.displayQuotes = (queens) => {
-    // console.log(queens);
 
-    //getting the html element(button)
-    //innerHTML
-    //append to the button
+
+//Method to display data on the page and pass it in a parameter so that the method knows it'll have to actually accept an argument when it's called
+
+// Display a random quote in the button field - Create function called displayQuote that will pull the quote and display it upon pageload
+
+queenApp.displayQuotes = (queens) => {
+    console.log(queens);
+    const ulElement = document.querySelector('.displayData');
 
     //for each quote in the quote array, run some code:
     queens.forEach(queen => {
-        const buttonElement = document.querySelector('button');        
-        buttonElement.innerText = this.quotes;
+        const liElement = document.createElement('li');
+        const buttonElement = document.createElement('button');
+        const quoteParagraph = document.createElement('p');   
+        // console.log(queen);
+
+        ulElement.appendChild(liElement);
+        liElement.appendChild(buttonElement);
+        buttonElement.appendChild(quoteParagraph);
         console.log(buttonElement);
+        
+        // add innerText to the quoteParagraph variable, equal to the queen object's 'quote' property:
+        quoteParagraph.innerText = queen.quote;
+        // console.log(quoteParagraph);
+
+        // Make an event listener method for when user clicks the button and store the user’s selection in a variable
+        buttonElement.addEventListener('click', function(){
+        
+        // create the image, with src and alt attributes:
+        const imageElement = document.createElement('img');
+        imageElement.src = queen.image_url;
+        imageElement.alt = `Drag Queen ${queen.name}`;
+        
+        const results = document.querySelector('.results');
+        results.appendChild(imageElement);
+
+        const queenName = document.createElement('p');
+        queenName.innerText = queen.name;
+        results.appendChild(queenName);
+
+        })
+
     })
     
 }
 
-// Display a random quote in the button field - Create function called displayQuote that will pull the quote and display it upon pageload
-// Make an event listener method for when user clicks the button and store the user’s selection in a variable
+
+
+
+
+
 
 // Return / display the selected Drag Queen profile, passing in the user’s choice to retrieve the related Queen’s name, image, and season’s they were on Drag Race from the API
 
