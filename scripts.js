@@ -4,6 +4,8 @@ const queenApp = {};
 queenApp.init = () => {
     // Store functions on pageload in init
     queenApp.getQuotes();
+    
+
 }
 
 queenApp.url = 'http://www.nokeynoshade.party/api/queens?limit=8'
@@ -29,8 +31,20 @@ queenApp.getQuotes = () => {
 
 // Display a random quote in the button field - Create function called displayQuote that will pull the quote and display it upon pageload
 
+
+
+
 queenApp.displayQuotes = (queens) => {
+
+    // ***** NEED TO GET RANDOMIZER TO ACTUALLY APPLY TO THE QUEEN ARRAY FROM API *****
+    getRandomQueen = (queens) => {
+        const randomQueen = Math.floor(Math.random() * queens.length);
+
+        return queens[randomQueen];
+    }
+
     console.log(queens);
+    
     const ulElement = document.querySelector('.displayData');
 
     //for each quote in the quote array, run some code:
@@ -52,17 +66,26 @@ queenApp.displayQuotes = (queens) => {
         // Make an event listener method for when user clicks the button and store the user’s selection in a variable
         buttonElement.addEventListener('click', function(){
         
+        const results = document.querySelector('.results');
+        results.innerText = '';
+
         // create the image, with src and alt attributes:
         const imageElement = document.createElement('img');
         imageElement.src = queen.image_url;
         imageElement.alt = `Drag Queen ${queen.name}`;
         
-        const results = document.querySelector('.results');
-        results.appendChild(imageElement);
-
+        // create the queen name:
         const queenName = document.createElement('p');
         queenName.innerText = queen.name;
+
+        // create the queen season number:
+        const seasonNum = document.createElement('p');
+        seasonNum.innerText = queen.seasons.seasonNumber;
+        
+        
         results.appendChild(queenName);
+        results.appendChild(seasonNum);
+        results.appendChild(imageElement);
 
         })
 
