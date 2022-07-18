@@ -3,6 +3,7 @@ ul {
     padding: 0;
     margin-top: 40px;
 }
+
 button {
     cursor: pointer;
     width: 100%;
@@ -15,4 +16,19 @@ button {
     &:hover{
         font-size: 1.25rem;
     }   
+}
+
+.results {
+    background-color: rgba(252, 255, 176, 0.8);
+    border-radius: 10%;
+    margin-bottom: 60px;
+    p {
+        padding: 15px;
+    }
+}
+
+img {
+    max-width: 60%;   
+    padding: 20px;
+    border-radius: 10%;
 }

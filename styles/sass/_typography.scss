@@ -5,31 +5,43 @@ body {
     margin: 0;
     padding: 0;
 }
+
 h1, h2, p, button {
     letter-spacing: 1.8px;
     margin: 0;
 }
+
 h1 {
     font-size: 3.3rem;
     margin: 50px 0;
 }
+
 .animate__lightSpeedInRight {
     animation-duration: 2s;
     animation-name: lightSpeedInRight;
 }
+
 h2 {
     font-size: 2rem;
     margin-bottom: 50px;
 }
-h1, h2 {
+
+h3 {
+    font-size: 1.8rem;
+    padding: 25px 15px 0;
+}
+
+h1, h2, .results, .quotes > div:nth-child(1) {
     text-transform: uppercase;
     color: $tertiaryColor;
     text-shadow: 2px 2px 3px $borderColor;
 }
-h1, h2, .quotes p, button {
+
+h1, h2, .results, .quotes p, button {
     font-style: italic;
     font-weight: bold;
 }
+
 button{
     font-family: $font;
 }

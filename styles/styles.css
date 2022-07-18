@@ -278,13 +278,18 @@ h2 {
   margin-bottom: 50px;
 }
 
-h1, h2 {
+h3 {
+  font-size: 1.8rem;
+  padding: 25px 15px 0;
+}
+
+h1, h2, .results, .quotes > div:nth-child(1) {
   text-transform: uppercase;
   color: #e4ba33;
   text-shadow: 2px 2px 3px purple;
 }
 
-h1, h2, .quotes p, button {
+h1, h2, .results, .quotes p, button {
   font-style: italic;
   font-weight: bold;
 }
@@ -314,6 +319,21 @@ button:hover {
   font-size: 1.25rem;
 }
 
+.results {
+  background-color: rgba(252, 255, 176, 0.8);
+  border-radius: 10%;
+  margin-bottom: 60px;
+}
+.results p {
+  padding: 15px;
+}
+
+img {
+  max-width: 60%;
+  padding: 20px;
+  border-radius: 10%;
+}
+
 footer {
   margin: 100px 0 25px;
   font-size: 0.7rem;
@@ -324,6 +344,11 @@ a {
   color: inherit;
 }
 
+@media (max-width: 600px) {
+  img {
+    max-width: 80%;
+  }
+}
 @media (max-width: 400px) {
   h1 {
     font-size: 2.2rem;

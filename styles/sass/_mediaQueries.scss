@@ -1,8 +1,15 @@
+@media (max-width: 600px){
+    img {
+        max-width: 80%;    
+    }
+}
+
 @media (max-width: 400px){
-    h1{
+    h1 {
         font-size: 2.2rem;
     }
-    h2{
+    
+    h2 {
         font-size: 1.5rem;
     }
 }
