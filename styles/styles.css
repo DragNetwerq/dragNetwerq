@@ -334,6 +334,20 @@ img {
   border-radius: 10%;
 }
 
+form {
+  margin-top: 50px;
+  font-style: italic;
+}
+form select {
+  background-color: #e4ba33;
+  border: 0.5px solid purple;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2px 0;
+  margin: 10px;
+  width: 180px;
+}
+
 footer {
   margin: 100px 0 25px;
   font-size: 0.7rem;

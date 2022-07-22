@@ -4,9 +4,10 @@ const queenApp = {};
 queenApp.init = () => {
     // Store functions on pageload in init
     queenApp.getQuotes();
+    queenApp.events();
 }
 
-queenApp.url = 'http://www.nokeynoshade.party/api/queens?limit=9'
+queenApp.url = "http://www.nokeynoshade.party/api/seasons/1/queens"
 
 // method to call the api
 queenApp.getQuotes = () => {
@@ -62,15 +63,21 @@ queenApp.displayQuotes = (queens) => {
         // create the queen name, add the name from the queen object to the new variable:
         const queenName = document.createElement('h3');
         queenName.innerText = queen.name;
-
-        // create the queen season number, add the season number from the queen object to the new variable:
-        const seasonNum = document.createElement('p');
-        seasonNum.innerText = `Appeared on Season # ${queen.seasons[0].seasonNumber}`;
         
-        results.append(queenName, seasonNum, imageElement);
+        results.append(queenName, imageElement);
         })
     })
-    
+}
+
+queenApp.events = function() {
+    document.querySelector('#season').addEventListener('change', function(){
+        // what to do when the select option changes:
+        // store the value of the object:
+        const userSelection = this.value;
+        // pass it as an argument in the queenApp.getQuotes function, using the argument as the value for the season id in the url:
+        queenApp.getQuotes(userSelection);
+        console.log(userSelection);
+    })
 }
 
 queenApp.init();

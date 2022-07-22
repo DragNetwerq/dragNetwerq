@@ -1,0 +1,14 @@
+
+form {
+    margin-top: 50px;
+    font-style: italic;
+    select {
+        background-color: $tertiaryColor;
+        border: 0.5px solid $borderColor;
+        border-radius: 5px;
+        text-align: center;
+        padding: 2px 0;
+        margin: 10px;
+        width: 180px;
+    }
+} 
