@@ -1,7 +1,10 @@
 footer {
     margin: 100px 0 25px;
     font-size: 0.7rem;
+    color: $borderColor;
+    text-shadow: 1px 1px 1px $tertiaryColor;
 }
+
 a {
     text-decoration: none;
     color: inherit;

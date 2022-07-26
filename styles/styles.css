@@ -326,6 +326,7 @@ button:hover {
 }
 .results p {
   padding: 15px;
+  color: purple;
 }
 
 img {
@@ -351,6 +352,8 @@ form select {
 footer {
   margin: 100px 0 25px;
   font-size: 0.7rem;
+  color: purple;
+  text-shadow: 1px 1px 1px #e4ba33;
 }
 
 a {
