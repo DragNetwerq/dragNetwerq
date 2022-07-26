@@ -1,4 +1,3 @@
-// Come up with namespace name for our app, 'queenApp' and store it in a variable:
 const queenApp = {};
 
 queenApp.init = () => {
@@ -9,7 +8,7 @@ queenApp.init = () => {
 
 // method to call the api
 queenApp.getQuotes = (userSelection) => {
-    queenApp.url = `http://www.nokeynoshade.party/api/seasons/${userSelection}/queens`
+    queenApp.url = `https://shrouded-bayou-34065.herokuapp.com/http://www.nokeynoshade.party/api/seasons/${userSelection}/queens`
     const url = new URL(queenApp.url);
     fetch(url)
         .then(function (data) {
@@ -36,7 +35,7 @@ queenApp.displayQuotes = (queens) => {
         const buttonElement = document.createElement('button');
         const quoteParagraph = document.createElement('p');   
 
-        if(queen.quote != '""'){
+        if(queen.quote != '""' && queen.quote != ''){
             ulElement.appendChild(liElement);
             liElement.appendChild(buttonElement);
             buttonElement.appendChild(quoteParagraph);
